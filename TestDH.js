@@ -14,8 +14,12 @@ async function dh(){
         foto.click()
         await wait(2000)
 
-        var pop = driver.wait(until.elementLocated(By.css('#add_to_cart > button > span')))
+        var buy = driver.wait(until.elementLocated(By.css('#add_to_cart > button > span')))
         await driver.wait(until.urlIs("http://automationpractice.com/index.php?id_product=5&controller=product"))
+        await wait(2000)
+        await buy.click()
+
+        var pop = driver.wait(until.elementLocated(By.xpath('//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a')))
         await wait(2000)
         pop.click()
         
