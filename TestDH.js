@@ -1,5 +1,6 @@
 const wait = require('./helpers').wait
 const registro = require('./registro').registro
+const isEmpty = require('./helpers').isEmpty
 const {Builder, By, Key, until, Capabilities} = require('selenium-webdriver');
 
 async function dh(){
@@ -35,7 +36,7 @@ async function dh(){
         var checkbox = driver.wait(until.elementLocated(By.css('#cgv')))
         await driver.wait(until.urlIs("http://automationpractice.com/index.php?controller=order"))
         checkbox.click()
-        console.log('TC1: EL CHECKBOX FUE MARCADO EXITOSAMENTE')
+        console.log('TC-13: EL CHECKBOX FUE MARCADO EXITOSAMENTE')
 
         await wait(1000)
         var proced = driver.wait(until.elementLocated(By.css('.standard-checkout > span')))
